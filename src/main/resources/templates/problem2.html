@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
+<h1 style="color:blue;">Nice work</h1>
+<div th:text="${session.nameVar} + ',' + ' ' + 'you have solved the first question. Lets continue..'"></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div>What is 5 + 5?</div>
+
+<form action="/problem3" method="POST">
+    <input placeholder="Write your answer" name="solution1"/>
+    <input type="submit"/>
+</form>
+
 
 </body>
 </html>
