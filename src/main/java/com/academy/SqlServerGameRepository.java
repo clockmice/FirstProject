@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,11 +17,30 @@ public class SqlServerGameRepository implements GameRepository {
     @Override
     public List<User> ListUsers() {
         try (Connection conn = dataSource.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT Name FROM [Project1_5]")) {
-                 List<User> users = new ArrayList<>();
-                 while (rs.next()) users.add(rsUser(rs));
-                 return users;
+             PreparedStatement ps = conn.prepareStatement("SELECT Name FROM [dbo].[Player]")) {
+            try (ResultSet rs = ps.executeQuery()){
+                List<User> users = new ArrayList<>();
+                while (rs.next()) {
+                    users.add(rsUser(rs));
+                }
+                return users;
+            }
+        } catch (SQLException e) {
+            throw new GameRepositoryException(e);
+        }
+    }
+
+    @Override
+    public User findUser(long userID) {
+        try (Connection conn = dataSource.getConnection();
+            PreparedStatement ps = conn.prepareStatement("SELECT Name FROM [dbo].[Player] WHERE PlayerID = ?")) {
+            ps.setLong(1, userID);
+            try (ResultSet rs = ps.executeQuery()){
+                if(!rs.next()){
+                    throw new GameRepositoryException ("No player with ID: " + userID);
+                }
+                else return new User(rs.getString(1));
+            }
         } catch (SQLException e) {
             throw new GameRepositoryException(e);
         }
