@@ -9,14 +9,18 @@
 <div th:text="${session.nameVar} + ',' + ' ' + 'you have solved the first question. Lets continue..'"></div>
 <p></p>
 <p></p>
+<p>What will the following program print out?</p>
 <p></p>
-<p></p>
-<div>What is 5 + 5?</div>
 
 <form action="/problem3" method="POST">
     <input placeholder="Write your answer" name="solution1"/>
     <input type="submit"/>
 </form>
+<div th:text="${Message2}"></div>
+<p></p>
+<p></p>
+<img src="kod.jpg"/>
+
 
 
 </body>
