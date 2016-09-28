@@ -28,6 +28,27 @@ public class FirstProjectApplication {
 		return modelAndView;
 	} // Lägger name i en variabel.
 
+	@RequestMapping(method = RequestMethod.POST, path = "/problem2")
+	public ModelAndView problem2(@RequestParam String solution) {
+		if(solution.trim().equals("2")){
+			ModelAndView modelAndView = new ModelAndView("problem2");
+			return modelAndView;
+		}
+		ModelAndView modelAndViewError = new ModelAndView("problem1");
+		modelAndViewError.addObject("Message", "Wrong answer!");
+		return modelAndViewError;
+	} // Länkar till problem2 om svaret är rätt. Annars tillbaka till problem1.
+
+	@RequestMapping(method = RequestMethod.POST, path = "/problem3")
+	public ModelAndView problem3(@RequestParam String solution) {
+		if (solution.trim().equals("10")) {
+			ModelAndView modelAndView = new ModelAndView("problem3");
+			return modelAndView;
+		}
+		ModelAndView modelAndViewError = new ModelAndView("problem2");
+		modelAndViewError.addObject("Message", "Wrong answer!");
+		return modelAndViewError;
+	} // Länkar till problem 3 om svaret är rätt. Annars tillbaka till problem2.
 
 
 
