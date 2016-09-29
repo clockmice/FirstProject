@@ -35,9 +35,8 @@ public class GameController {
         session.setAttribute("nameVar", nameVar);
         //metod som sparar i databasen
         long timeNow = System.currentTimeMillis();
-        User user = new User(nameVar);
+        user = new User(nameVar);
         user.setStartTime(timeNow);
-        gameRepository.saveName(nameVar);
         ModelAndView modelAndView = new ModelAndView("problem1");
         return modelAndView;
     } // Lägger name i en variabel.
@@ -80,6 +79,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path="/lastpage")
     public ModelAndView listNames () {
+        gameRepository.saveUser(user);
         return new ModelAndView("/lastpage")
                 .addObject("names",gameRepository.ListUsers());
     } // Länkar till lastpage och visar denna sidan med en lista av namnen från databasen.

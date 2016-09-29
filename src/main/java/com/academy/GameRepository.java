@@ -6,8 +6,7 @@ public interface GameRepository {
 
     List<User> ListUsers();
     User findUser(long userID);
-    public void saveName(String name);
-    public void saveStartTime(long startTime);
+    public void saveUser(User user);
 
 }
 

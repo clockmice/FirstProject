@@ -17,7 +17,7 @@ public class SqlServerGameRepository implements GameRepository {
     @Override
     public List<User> ListUsers() {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT Name FROM [dbo].[Player]")) {
+             PreparedStatement ps = conn.prepareStatement("SELECT Name, TotalTime FROM [dbo].[Player]")) {
             try (ResultSet rs = ps.executeQuery()){
                 List<User> users = new ArrayList<>();
                 while (rs.next()) {
@@ -48,27 +48,12 @@ public class SqlServerGameRepository implements GameRepository {
 
     @Override
     //fångar in username
-    public void saveName(String name) {
+    public void saveUser(User user) {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO [dbo].[Player] (Name) VALUES (?)")) {
-            ps.setString(1, name);
-            try {
-                ps.executeUpdate();
-            }
-            catch (SQLException e){
-                throw new GameRepositoryException(e);
-            }
-        } catch (SQLException e) {
-            throw new GameRepositoryException(e);
-        }
-
-    }
-
-    @Override
-    public void saveStartTime(long startTime) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO [dbo].[Player] (StartTime) VALUES (?)")) {
-            ps.setLong(1, startTime);
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO [dbo].[Player] (Name, TotalTime) VALUES (?, ?)")) {
+            long l = System.currentTimeMillis() - user.startTime;
+            ps.setString(1, user.name);
+            ps.setLong(2, l);
             try {
                 ps.executeUpdate();
             }
@@ -79,9 +64,10 @@ public class SqlServerGameRepository implements GameRepository {
             throw new GameRepositoryException(e);
         }
     }
-
 
     private User rsUser(ResultSet rs) throws SQLException {
-        return new User(rs.getString("Name"));
+        User user = new User(rs.getString("Name"));
+        user.setTotalTime(rs.getLong("TotalTime"));
+        return user;
     }
 }

@@ -11,6 +11,7 @@
 <ul>
     <li th:each="listitem : ${names}">
         <a th:text="${listitem.name}" />
+        <a th:text="${listitem.totalTime}" />
     </li>
 </ul>
 
