@@ -6,19 +6,19 @@
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
-<p/>
-<p/>
-<p/>
-<div id="sistatexten" style="position: relative;"><h1>You're done, well done my friend!</h1></div>
-<p id="list">
-<h3>High score list</h3>
-<ul>
-    <li th:each="listitem : ${names}">
-        <a th:text="${listitem.name}" />
-        <a th:text="${listitem.result}" />
-    </li>
-</ul>
-</p>
+
+<div id="sistatexten" style="position: relative;"><h1>You're done, well done my friend!</h1>
+    <p id="list">
+    <h3>High score list</h3>
+    <ul>
+        <li th:each="listitem : ${names}">
+            <a th:text="${listitem.name}" />
+            <a th:text="${listitem.result}" />
+        </li>
+    </ul>
+    </p>
+</div>
+
 <canvas id="c"></canvas>
 <script src="/matrix.js"></script>
 </body>
