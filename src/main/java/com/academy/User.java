@@ -5,9 +5,18 @@ public class User {
     public long startTime;
     public long userID;
     public long totalTime;
+    public String result;
 
     public User(String name) {
         this.name = name;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     public long getStartTime() {

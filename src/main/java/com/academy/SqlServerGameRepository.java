@@ -17,7 +17,7 @@ public class SqlServerGameRepository implements GameRepository {
     @Override
     public List<User> ListUsers() {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT Name, TotalTime FROM [dbo].[Player]")) {
+             PreparedStatement ps = conn.prepareStatement("SELECT Name, TotalTime FROM [dbo].[Player] ORDER BY TotalTime ASC")) {
             try (ResultSet rs = ps.executeQuery()){
                 List<User> users = new ArrayList<>();
                 while (rs.next()) {
@@ -67,7 +67,11 @@ public class SqlServerGameRepository implements GameRepository {
 
     private User rsUser(ResultSet rs) throws SQLException {
         User user = new User(rs.getString("Name"));
-        user.setTotalTime(rs.getLong("TotalTime"));
+        long millis = rs.getLong("TotalTime");
+        user.setTotalTime(millis);
+        long minutes = millis / 1000 / 60;
+        long seconds = millis / 1000 % 60;
+        user.setResult(minutes + ":" + seconds);
         return user;
     }
 }
