@@ -2,22 +2,21 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>hello</title>
+    <title>Level 1</title>
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
-<h1 style="color:blue;">Welcome</h1>
-<div th:text="${session.nameVar} + ' ' + 'to your first problem. Try to solve the problem as fast as you can.'"></div>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<h1>Welcome to your first problem, <span th:text="${session.nameVar}"></span>!</h1>
+<h3>Try to solve the problem as fast as you can.</h3>
+<p/>
+<p/>
+<p/>
 <div><big>What will the following line print?</big></div>
-<p></p>
+<p/>
 <div>System.out.println("Hello World");</div>
-<p></p>
-<p></p>
-<p></p>
+<p/>
+<p/>
+<p/>
 <form action="/problem2" method="POST">
     <input placeholder="Write your answer" name="solution"/>
     <input type="submit"/>
