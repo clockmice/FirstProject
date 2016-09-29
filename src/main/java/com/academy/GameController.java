@@ -30,6 +30,7 @@ public class GameController {
         long timeNow = System.currentTimeMillis();
         User user = new User(nameVar, timeNow);
         gameRepository.saveName(nameVar);
+        gameRepository.saveStartTime(timeNow);
         ModelAndView modelAndView = new ModelAndView("redirect:/");
         return modelAndView;
     } // Lägger name i en variabel.
