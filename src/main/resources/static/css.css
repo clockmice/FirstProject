@@ -13,7 +13,11 @@ body {
     background-color:lightsalmon;
 }
 h1 {
-    color:blue;
+    color: #17a942;
+    font-size: xx-large;
+    font-family: sans-serif;
+    padding: 50px;
+    text-align: center;
 }
 #sistatexten {
     color:white;
