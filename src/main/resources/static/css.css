@@ -7,6 +7,7 @@
 canvas {
     position: absolute;
     display: block;
+    top:0px;
 }
 body {
     background-color:lightsalmon;
@@ -16,7 +17,17 @@ h1 {
 }
 #sistatexten {
     color:white;
+    top:100px;
+    z-index: 999;
+    margin: auto;
+    width: 50%;
+    border: 3px solid;
+    padding: 10px;
 }
 #error1 {
     color:red;
+}
+
+p {
+    margin-bottom: 20px;
 }
