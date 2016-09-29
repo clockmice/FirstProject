@@ -24,21 +24,19 @@ public class GameController {
         return modelAndView;
     } // Länkar till lastpage från index.html
 
-
     /*@RequestMapping(method = RequestMethod.GET, path = "/problem1")
     public ModelAndView problem1() {
         ModelAndView modelAndView = new ModelAndView("problem1");
         return modelAndView;
     } // Länkar till problem1.html */
 
-
     @RequestMapping(method = RequestMethod.POST, path="/post")
     public ModelAndView nameVar(@RequestParam String nameVar, HttpSession session){
         session.setAttribute("nameVar", nameVar);
         //metod som sparar i databasen
         long timeNow = System.currentTimeMillis();
-        User user = new User(nameVar, timeNow);
-        gameRepository.saveName(nameVar);
+        user = new User(nameVar);
+        user.setStartTime(timeNow);
         ModelAndView modelAndView = new ModelAndView("problem1");
         return modelAndView;
     } // Lägger name i en variabel.
@@ -78,4 +76,11 @@ public class GameController {
 		modelAndViewError3.addObject("Message3", "Wrong answer!");
 		return modelAndViewError3;
 	} // Länkar till problem 4 om svaret är rätt. Annars tillbaka till problem3.
+
+    @RequestMapping(method = RequestMethod.POST, path="/lastpage")
+    public ModelAndView listNames () {
+        gameRepository.saveUser(user);
+        return new ModelAndView("/lastpage")
+                .addObject("names",gameRepository.ListUsers());
+    } // Länkar till lastpage och visar denna sidan med en lista av namnen från databasen.
 }

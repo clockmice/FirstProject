@@ -2,20 +2,20 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Level 3</title>
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
-<h1 style="color:blue;">Nice work</h1>
-<div th:text="${session.nameVar} + ',' + ' ' + 'you have solved the second question. Lets continue..'"></div>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<div>When did Java first came out? ****</div>
+<h1>Well done, <span th:text="${session.nameVar}"></span>!</h1>
+<h3>So far so good, but can you overcome this next challenge?</h3>
+<p/>
+<p/>
+<p/>
+<p/>
+<div>When did Java first came out?</div>
 
 
-<form action="/problem4" method="POST">
+<form action="/lastpage" method="POST">
     <input placeholder="Write your answer" name="solution2"/>
     <input type="submit"/>
 </form>
