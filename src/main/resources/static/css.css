@@ -7,10 +7,9 @@
 canvas {
     display: block;
 }
-<<<<<<< HEAD
 body {
-    background-color:lightblue;
-=======
+    background-color: lightblue;
+}
 h1 {
     color:blue;
 }
@@ -19,6 +18,5 @@ h1 {
     color:red;
 }
 #list {
-    text-align: center
->>>>>>> refs/remotes/origin/master
+    text-align: center;
 }
