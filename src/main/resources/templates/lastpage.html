@@ -2,18 +2,19 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>Hello</title>
+    <title>Game over</title>
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
-<div>You're done, well done my friend!</div>
-
+<h1>You're done, well done my friend!</h1>
+<p id="list">
+<h3>High score list</h3>
 <ul>
     <li th:each="listitem : ${names}">
         <a th:text="${listitem.name}" />
     </li>
 </ul>
-
+</p>
 
 </body>
 </html>
