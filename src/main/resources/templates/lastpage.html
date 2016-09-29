@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>Hello</title>
 </head>
 <body>
-<div>Your done, well done my friend.</div>
+<div>You're done, well done my friend!</div>
+
+<ul>
+    <li th:each="listitem : ${names}">
+        <a th:text="${listitem.name}" />
+    </li>
+</ul>
+
+
 </body>
 </html>

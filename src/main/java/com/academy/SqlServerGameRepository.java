@@ -33,13 +33,13 @@ public class SqlServerGameRepository implements GameRepository {
     @Override
     public User findUser(long userID) {
         try (Connection conn = dataSource.getConnection();
-            PreparedStatement ps = conn.prepareStatement("SELECT Name FROM [dbo].[Player] WHERE PlayerID = ?")) {
+            PreparedStatement ps = conn.prepareStatement("SELECT Name, StartTime FROM [dbo].[Player] WHERE PlayerID = ?")) {
             ps.setLong(1, userID);
             try (ResultSet rs = ps.executeQuery()){
                 if(!rs.next()){
                     throw new GameRepositoryException ("No player with ID: " + userID);
                 }
-                else return new User(rs.getString(1));
+                else return new User(rs.getString(1), rs.getLong(2));
             }
         } catch (SQLException e) {
             throw new GameRepositoryException(e);
@@ -47,6 +47,7 @@ public class SqlServerGameRepository implements GameRepository {
     }
 
     @Override
+    //fångar in username
     public void saveName(String name) {
         try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement("INSERT INTO [dbo].[Player] (Name) VALUES (?)")) {
@@ -62,9 +63,26 @@ public class SqlServerGameRepository implements GameRepository {
         }
 
     }
-    //fångar in username
+
+    @Override
+    public void saveStartTime(long startTime) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO [dbo].[Player] (StartTime) VALUES (?)")) {
+            ps.setLong(1, startTime);
+            try {
+                ps.executeUpdate();
+            }
+            catch (SQLException e){
+                throw new GameRepositoryException(e);
+            }
+        } catch (SQLException e) {
+            throw new GameRepositoryException(e);
+        }
+
+    }
+
 
     private User rsUser(ResultSet rs) throws SQLException {
-        return new User(rs.getString("Name"));
+        return new User(rs.getString("Name"), rs.getLong("startTime"));
     }
 }

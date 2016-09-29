@@ -11,6 +11,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class GameController {
+
+    private User user;
+
     @Autowired
     private GameRepository gameRepository;
 
@@ -33,6 +36,8 @@ public class GameController {
     public ModelAndView nameVar(@RequestParam String nameVar, HttpSession session){
         session.setAttribute("nameVar", nameVar);
         //metod som sparar i databasen
+        long timeNow = System.currentTimeMillis();
+        User user = new User(nameVar, timeNow);
         gameRepository.saveName(nameVar);
         ModelAndView modelAndView = new ModelAndView("problem1");
         return modelAndView;
