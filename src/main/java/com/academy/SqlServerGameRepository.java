@@ -62,6 +62,7 @@ public class SqlServerGameRepository implements GameRepository {
         }
 
     }
+    //fångar in username
 
     private User rsUser(ResultSet rs) throws SQLException {
         return new User(rs.getString("Name"));
