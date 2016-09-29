@@ -2,6 +2,17 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
+<<<<<<< HEAD
+    <title>Hello</title>
+    <link rel="Stylesheet" href="/css.css"/>
+</head>
+<body id="lastpagebakgrund">
+<p></p>
+<p></p>
+<p></p>
+<div style="position: absolute;"><big>You're done, well done my friend!</big></div>
+
+=======
     <title>Game over</title>
     <link rel="Stylesheet" href="/css.css"/>
 </head>
@@ -9,13 +20,19 @@
 <h1>You're done, well done my friend!</h1>
 <p id="list">
 <h3>High score list</h3>
+>>>>>>> refs/remotes/origin/master
 <ul>
     <li th:each="listitem : ${names}">
         <a th:text="${listitem.name}" />
         <a th:text="${listitem.totalTime}" />
     </li>
 </ul>
+<<<<<<< HEAD
+<canvas id="c"></canvas>
+<script src="/matrix.js"></script>
+=======
 </p>
 
+>>>>>>> refs/remotes/origin/master
 </body>
 </html>

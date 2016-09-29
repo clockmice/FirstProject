@@ -1,6 +1,16 @@
-body {
-    background-color:lightsalmon;
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*adding a black bg to the body to make things clearer*/
+#lastpagebakgrund {
+    background: black;
 }
+canvas {
+    display: block;
+}
+<<<<<<< HEAD
+body {
+    background-color:lightblue;
+=======
 h1 {
     color:blue;
 }
@@ -10,4 +20,5 @@ h1 {
 }
 #list {
     text-align: center
+>>>>>>> refs/remotes/origin/master
 }
