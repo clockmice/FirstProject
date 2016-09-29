@@ -1,6 +1,5 @@
-/*basic reset*/
-* {margin: 0; padding: 0;}
-/*adding a black bg to te body to make things clearer*/
+
+* {margin: 0; padding: 0;}  /*adding a black bg to body to make things clearer*/
 #lastpagebakgrund {
     position: absolute;
     background: black  ;
@@ -10,8 +9,14 @@ canvas {
     display: block;
 }
 body {
-    background-color:lightblue;
+    background-color:lightsalmon;
+}
+h1 {
+    color:blue;
 }
 #sistatexten {
     color:white;
+}
+#error1 {
+    color:red;
 }
