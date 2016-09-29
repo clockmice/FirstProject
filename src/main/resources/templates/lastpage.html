@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello</title>
+    <link rel="Stylesheet" href="/css.css"/>
+</head>
+<body id="lastpagebakgrund">
+<p></p>
+<p></p>
+<p></p>
+<div id="sistatexten" style="position: relative;"><big>You're done, well done my friend!</big></div>
+
+<ul>
+    <li th:each="listitem : ${names}">
+        <a th:text="${listitem.name}" />
+    </li>
+</ul>
+<canvas id="c"></canvas>
+<script src="/matrix.js"></script>
+</body>
+</html>

@@ -1,22 +1,18 @@
+
 /*basic reset*/
 * {margin: 0; padding: 0;}
-/*adding a black bg to the body to make things clearer*/
+/*adding a black bg to te body to make things clearer*/
 #lastpagebakgrund {
-    background: black;
+    position: absolute;
+    background: black  ;
 }
 canvas {
+    position: absolute;
     display: block;
 }
 body {
-    background-color: lightblue;
+    background-color:lightblue;
 }
-h1 {
-    color:blue;
-}
-
-#error1 {
-    color:red;
-}
-#list {
-    text-align: center;
+#sistatexten {
+    color:white;
 }
