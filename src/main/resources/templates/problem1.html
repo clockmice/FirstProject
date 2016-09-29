@@ -6,24 +6,18 @@
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
-<h1>Welcome to your first problem, <span th:text="${session.nameVar}"></span>!</h1>
-<h3>Try to solve the problem as fast as you can.</h3>
-<p/>
-<p/>
-<p/>
-<div><big>What will the following line print?</big></div>
-<p/>
-<div>System.out.println("Hello World");</div>
-<p/>
-<p/>
-<p/>
-<form action="/problem2" method="POST">
-    <input placeholder="Write your answer" name="solution"/>
-    <input type="submit"/>
-</form>
-
-<div id="error1" th:text="${Message}"></div>
-
-
+    <h1>Welcome to your first problem, <span th:text="${session.nameVar}"></span>!</h1>
+    <p/>
+    <h3>Try to solve the problem as fast as you can.</h3>
+    <p/>
+    <div>What will the following line print?</div>
+    <p/>
+    <div>System.out.println("Hello World");</div>
+    <p/>
+    <form action="/problem2" method="POST">
+        <input placeholder="Write your answer" name="solution"/>
+        <input type="submit"/>
+    </form>
+    <div id="error1" th:text="${Message}"></div>
 </body>
 </html>
