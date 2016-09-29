@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title></title>
 </head>
 <body>
-<div>hi</div>
+<h1 style="color:blue;">Nice work</h1>
+<div th:text="${session.nameVar} + ',' + ' ' + 'you have solved the second question. Lets continue..'"></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div>When did Java first came out? ****</div>
+
+
+<form action="/problem4" method="POST">
+    <input placeholder="Write your answer" name="solution2"/>
+    <input type="submit"/>
+</form>
+
+<div th:text="${Message3}"></div>
+
 </body>
 </html>
