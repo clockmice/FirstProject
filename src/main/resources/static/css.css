@@ -1,7 +1,12 @@
-body {
-    background-color:lightsalmon;
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*adding a black bg to the body to make things clearer*/
+#lastpagebakgrund {
+    background: black;
 }
-
-#error1 {
-    color:red;
+canvas {
+    display: block;
+}
+body {
+    background-color:lightblue;
 }
