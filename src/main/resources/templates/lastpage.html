@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Hello</title>
+    <link rel="Stylesheet" href="/css.css"/>
 </head>
-<body>
-<div>You're done, well done my friend!</div>
+<body id="lastpagebakgrund">
+<p></p>
+<p></p>
+<p></p>
+<div style="position: absolute;"><big>You're done, well done my friend!</big></div>
 
 <ul>
     <li th:each="listitem : ${names}">
         <a th:text="${listitem.name}" />
     </li>
 </ul>
-
-
+<canvas id="c"></canvas>
+<script src="/matrix.js"></script>
 </body>
 </html>
