@@ -1,7 +1,13 @@
 body {
     background-color:lightsalmon;
 }
+h1 {
+    color:blue;
+}
 
 #error1 {
     color:red;
+}
+#list {
+    text-align: center
 }

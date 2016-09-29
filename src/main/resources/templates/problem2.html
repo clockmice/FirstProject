@@ -2,24 +2,22 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Level 2</title>
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
-<h1 style="color:blue;">Nice work</h1>
-<div th:text="${session.nameVar} + ',' + ' ' + 'you have solved the first question. Lets continue..'"></div>
-<p></p>
-<p></p>
+<h1>Nice work, <span th:text="${session.nameVar}"></span>!</h1>
+<h3>You have solved the first problem, let's continue...</h3>
 <p>What will the following program print out?</p>
-<p></p>
+<p/>
 
 <form action="/problem3" method="POST">
     <input placeholder="Write your answer" name="solution1"/>
     <input type="submit"/>
 </form>
 <div th:text="${Message2}"></div>
-<p></p>
-<p></p>
+<p/>
+<p/>
 <img src="kod.jpg"/>
 
 
