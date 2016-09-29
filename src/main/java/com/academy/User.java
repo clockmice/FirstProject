@@ -5,8 +5,15 @@ public class User {
     public long startTime;
     public long userID;
 
-    public User(String name, long startTime) {
+    public User(String name) {
         this.name = name;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
         this.startTime = startTime;
     }
 }

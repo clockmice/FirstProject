@@ -33,13 +33,13 @@ public class SqlServerGameRepository implements GameRepository {
     @Override
     public User findUser(long userID) {
         try (Connection conn = dataSource.getConnection();
-            PreparedStatement ps = conn.prepareStatement("SELECT Name, StartTime FROM [dbo].[Player] WHERE PlayerID = ?")) {
+            PreparedStatement ps = conn.prepareStatement("SELECT Name FROM [dbo].[Player] WHERE PlayerID = ?")) {
             ps.setLong(1, userID);
             try (ResultSet rs = ps.executeQuery()){
                 if(!rs.next()){
                     throw new GameRepositoryException ("No player with ID: " + userID);
                 }
-                else return new User(rs.getString(1), rs.getLong(2));
+                else return new User(rs.getString(1));
             }
         } catch (SQLException e) {
             throw new GameRepositoryException(e);
@@ -78,11 +78,10 @@ public class SqlServerGameRepository implements GameRepository {
         } catch (SQLException e) {
             throw new GameRepositoryException(e);
         }
-
     }
 
 
     private User rsUser(ResultSet rs) throws SQLException {
-        return new User(rs.getString("Name"), rs.getLong("startTime"));
+        return new User(rs.getString("Name"));
     }
 }
