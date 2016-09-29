@@ -17,7 +17,7 @@ public class SqlServerGameRepository implements GameRepository {
     @Override
     public List<User> ListUsers() {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT Name, TotalTime FROM [dbo].[Player] ORDER BY TotalTime ASC")) {
+             PreparedStatement ps = conn.prepareStatement("SELECT TOP (10) Name, TotalTime FROM [dbo].[Player] ORDER BY TotalTime ASC")) {
             try (ResultSet rs = ps.executeQuery()){
                 List<User> users = new ArrayList<>();
                 while (rs.next()) {

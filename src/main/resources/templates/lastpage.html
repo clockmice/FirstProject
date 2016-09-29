@@ -10,7 +10,7 @@
 <div id="sistatexten" style="position: relative;"><h1>You're done, well done my friend!</h1>
     <p id="list">
     <h3>High score list</h3>
-    <ul>
+    <ul style="list-style: none;">
         <li th:each="listitem : ${names}">
             <a th:text="${listitem.name}" />
             <a th:text="${listitem.result}" />
