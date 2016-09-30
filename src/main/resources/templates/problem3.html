@@ -6,6 +6,7 @@
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
+<div id="sistatexten" style="position: relative;">
 <h1>Well done, <span th:text="${session.nameVar}"></span>! Week 3: Javascript</h1>
 <p/>
 <h3>So far so good, but can you overcome this next challenge?</h3>
@@ -19,6 +20,9 @@
 </form>
 
 <div th:text="${Message3}"></div>
+    </div>
+<canvas id="c"></canvas>
+<script src="/matrix.js"></script>
 
 </body>
 </html>

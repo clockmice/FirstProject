@@ -6,6 +6,7 @@
     <link rel="Stylesheet" href="/css.css"/>
 </head>
 <body>
+<div id="sistatexten" style="position: relative;">
 <h1>Nice work, <span th:text="${session.nameVar}"></span>! Week 2: Web Intro</h1>
 <div id="text">
 <p/>
@@ -19,9 +20,15 @@
     <input type="submit"/>
 </form>
 <div th:text="${Message2}"></div>
-<p/>
-<p/>
 </div>
+
+<p/>
+<p/>
+    </div>
+    <canvas id="c"></canvas>
+    <script src="/matrix.js"></script>
+
+
 <!--<body>
     <h1>Welcome to your first problem, <span th:text="${session.nameVar}"></span>! Week 2: Web Intro</h1>
     <p/>
