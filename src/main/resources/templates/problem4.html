@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Level 4</title>
-    <link rel="Stylesheet" href="/css.css"/>
 </head>
-<body>
-<div>Problem 4. Ej implementerat ännu</div>
+<body xmlns:th="http://www.w3.org/1999/xhtml">
+<div id="sistatexten" style="position: relative;">
+    <h1>Well done, <span th:text="${session.nameVar}"></span>! Week 4: UX</h1>
+    <p/>
+    <h3>So far so good, figure out the missing word!</h3>
+    <p/>
+    <p/>
+    <div id="small_text">User experience design (UX, UXD, UED or XD) is the process of enhancing user satisfaction by improving the "............", accessibility, and pleasure provided in the interaction between the user and the product</div>
+    <p/>
+    <form action="/lastpage" method="POST">
+        <input placeholder="Write your answer" name="solution3"/>
+        <input type="submit"/>
+    </form>
+
+    <div th:text="${Message4}"></div>
+</div>
+<canvas id="c"></canvas>
+<script src="/matrix.js"></script>
+
 </body>
 </html>

@@ -77,6 +77,17 @@ public class GameController {
 		return modelAndViewError3;
 	} // Länkar till problem 4 om svaret är rätt. Annars tillbaka till problem3.
 
+    @RequestMapping(method = RequestMethod.POST, path = "/problem5")
+    public ModelAndView problem5(@RequestParam String solution3) {
+        if (solution3.trim().equals("falsey")) {
+            ModelAndView modelAndView = new ModelAndView("problem5");
+            return modelAndView;
+        }
+        ModelAndView modelAndViewError4 = new ModelAndView("problem4");
+        modelAndViewError4.addObject("Message4", "Wrong answer!");
+        return modelAndViewError4;
+    } // Länkar till problem 5 om svaret är rätt. Annars tillbaka till problem4.
+
     @RequestMapping(method = RequestMethod.POST, path="/lastpage")
     public ModelAndView listNames () {
         gameRepository.saveUser(user);
