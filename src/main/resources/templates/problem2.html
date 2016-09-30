@@ -8,7 +8,7 @@
 <body>
 <div id="sistatexten" style="position: relative;">
 <h1>Week 2: Web Intro</h1>
-<div id="text">
+
 <p/>
 <h3>Nice work, <span th:text="${session.nameVar}"></span>! You have solved the first problem, let's continue...</h3>
     <p/>
@@ -19,11 +19,13 @@
     <input placeholder="Write your answer" name="solution1"/>
     <input type="submit"/>
 </form>
-<div th:text="${Message2}"></div>
-</div>
+<p/>
+<div id="wronganswer" th:text="${Message2}"></div>
+
 
 <p/>
 <p/>
+    <div id="logout"><a href="/">Log out</a></div>
     </div>
     <canvas id="c"></canvas>
     <script src="/matrix.js"></script>

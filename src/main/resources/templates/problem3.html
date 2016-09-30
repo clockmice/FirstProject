@@ -15,11 +15,16 @@
 <div id="small_text">NaN === NaN Truthy or Falsey?</div>
 <p/>
 <form action="/problem4" method="POST">
-    <input placeholder="Write your answer" name="solution2"/>
+    <select name="solution2">
+        <option value="truthy">Truthy</option>
+        <option value="falsey">Falsey</option>
+    </select>
     <input type="submit"/>
 </form>
-
-<div th:text="${Message3}"></div>
+<p/>
+<div id="wronganswer" th:text="${Message3}"></div>
+<p/>
+    <div id="logout"><a href="/">Log out</a></div>
     </div>
 <canvas id="c"></canvas>
 <script src="/matrix.js"></script>

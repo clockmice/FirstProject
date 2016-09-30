@@ -24,6 +24,11 @@ public class GameController {
         return modelAndView;
     } // Länkar till lastpage från index.html
 
+//    @RequestMapping(method = RequestMethod.GET, path = "/")
+//    public ModelAndView logout() {
+//        ModelAndView logmeout = new
+//    }
+
     /*@RequestMapping(method = RequestMethod.GET, path = "/problem1")
     public ModelAndView problem1() {
         ModelAndView modelAndView = new ModelAndView("problem1");
