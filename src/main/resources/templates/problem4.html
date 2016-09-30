@@ -17,8 +17,10 @@
         <input placeholder="Write your answer" name="solution3"/>
         <input type="submit"/>
     </form>
-
-    <div th:text="${Message4}"></div>
+    <p/>
+    <div id="wronganswer" th:text="${Message4}"></div>
+    <p/>
+    <div><a id="link" href="/">Log out</a></div>
 </div>
 <canvas id="c"></canvas>
 <script src="/matrix.js"></script>
