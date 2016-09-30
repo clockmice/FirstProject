@@ -85,7 +85,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem5")
     public ModelAndView problem5(@RequestParam String solution3) {
-        if (solution3.trim().equals("usability")) {
+        if (solution3.trim().equalsIgnoreCase("usability")) {
             ModelAndView modelAndView = new ModelAndView("problem5");
             return modelAndView;
         }
@@ -107,7 +107,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem7")
     public ModelAndView problem7(@RequestParam String solution5) {
-        if (solution5.trim().equals("prepared statement")) {
+        if (solution5.trim().equalsIgnoreCase("prepared statement")) {
             ModelAndView modelAndView = new ModelAndView("problem7");
             return modelAndView;
         }
@@ -118,7 +118,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path="/lastpage")
     public ModelAndView listNames (@RequestParam String solution6) {
-        if (solution6.trim().equals("adaptation")) {
+        if (solution6.trim().equalsIgnoreCase("adaptation")) {
             gameRepository.saveUser(user);
             return new ModelAndView("/lastpage")
                     .addObject("names",gameRepository.ListUsers());
