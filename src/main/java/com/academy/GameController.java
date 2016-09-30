@@ -113,12 +113,17 @@ public class GameController {
         ModelAndView modelAndViewError4 = new ModelAndView("problem6");
         modelAndViewError4.addObject("Message6", "Wrong answer!");
         return modelAndViewError4;
-    } // Länkar till problem 6 om svaret är rätt. Annars tillbaka till problem4.
+    } // Länkar till problem 7 om svaret är rätt. Annars tillbaka till problem4.
 
     @RequestMapping(method = RequestMethod.POST, path="/lastpage")
-    public ModelAndView listNames () {
-        gameRepository.saveUser(user);
-        return new ModelAndView("/lastpage")
-                .addObject("names",gameRepository.ListUsers());
+    public ModelAndView listNames (@RequestParam String solution6) {
+        if (solution6.trim().equals("adaptation")) {
+            gameRepository.saveUser(user);
+            return new ModelAndView("/lastpage")
+                    .addObject("names",gameRepository.ListUsers());
+        }
+        ModelAndView modelAndViewError4 = new ModelAndView("problem7");
+        modelAndViewError4.addObject("Message7", "Wrong answer!");
+        return modelAndViewError4;
     } // Länkar till lastpage och visar denna sidan med en lista av namnen från databasen.
 }
