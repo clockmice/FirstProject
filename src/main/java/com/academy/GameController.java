@@ -106,7 +106,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem7")
     public ModelAndView problem7(@RequestParam String solution5) {
-        if (solution5.trim().equals("adaptation")) {
+        if (solution5.trim().equals("prepared statement")) {
             ModelAndView modelAndView = new ModelAndView("problem7");
             return modelAndView;
         }
