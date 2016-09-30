@@ -50,7 +50,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem2")
     public ModelAndView problem2(@RequestParam String solution) {
-        if(solution.trim().equals("buzz")){
+        if(solution.trim().equalsIgnoreCase("buzz")){
             ModelAndView modelAndView = new ModelAndView("problem2");
             return modelAndView;
         }
@@ -62,7 +62,7 @@ public class GameController {
 
 	@RequestMapping(method = RequestMethod.POST, path = "/problem3")
 	public ModelAndView problem3(@RequestParam String solution1) {
-		if (solution1.trim().equals("fiddler")) {
+		if (solution1.trim().equalsIgnoreCase("fiddler")) {
 			ModelAndView modelAndView = new ModelAndView("problem3");
 			return modelAndView;
 		}
@@ -96,7 +96,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem6")
     public ModelAndView problem6(@RequestParam String solution4) {
-        if (solution4.trim().equals("right answer")) {
+        if (solution4.trim().equals("correctchoice")) {
             ModelAndView modelAndView = new ModelAndView("problem6");
             return modelAndView;
         }
