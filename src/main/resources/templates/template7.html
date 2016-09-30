@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Week 5</title>
+    <link rel="Stylesheet" href="/css.css"/>
+</head>
+<body>
+<div id="sistatexten" style="position: relative;">
+    <h1>Week 7: Scrum</h1>
+    <p/>
+    <h3>Well done, <span th:text="${session.nameVar}"></span>!</h3>
+    <p/>
+    <p/>
+    <div id="small_text">Change Fisk Fiskenson's username to 'sill'</div>
+    <p/>
+    <form action="/lastpage" method="POST">
+        <input placeholder="Write your answer" name="solution6"/>
+        <input type="submit"/>
+    </form>
+
+    <div th:text="${Message7}"></div>
+    <p/>
+    <p/>
+
+</div>
+<canvas id="c"></canvas>
+<script src="/matrix.js"></script>
+</body>
+</html>
