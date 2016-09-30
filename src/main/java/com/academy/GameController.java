@@ -95,7 +95,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem6")
     public ModelAndView problem6(@RequestParam String solution4) {
-        if (solution4.trim().equals("UPDATE TestTable SET Username = 'sill' WHERE ID = 4")) {
+        if (solution4.trim().equals("right answer")) {
             ModelAndView modelAndView = new ModelAndView("problem6");
             return modelAndView;
         }
