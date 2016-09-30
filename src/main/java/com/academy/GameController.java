@@ -79,7 +79,7 @@ public class GameController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/problem5")
     public ModelAndView problem5(@RequestParam String solution3) {
-        if (solution3.trim().equals("falsey")) {
+        if (solution3.trim().equals("usability")) {
             ModelAndView modelAndView = new ModelAndView("problem5");
             return modelAndView;
         }
@@ -87,6 +87,28 @@ public class GameController {
         modelAndViewError4.addObject("Message4", "Wrong answer!");
         return modelAndViewError4;
     } // Länkar till problem 5 om svaret är rätt. Annars tillbaka till problem4.
+
+    @RequestMapping(method = RequestMethod.POST, path = "/problem6")
+    public ModelAndView problem6(@RequestParam String solution4) {
+        if (solution4.trim().equals("UPDATE TestTable SET Username = 'sill' WHERE ID = 4")) {
+            ModelAndView modelAndView = new ModelAndView("problem6");
+            return modelAndView;
+        }
+        ModelAndView modelAndViewError4 = new ModelAndView("problem5");
+        modelAndViewError4.addObject("Message5", "Wrong answer!");
+        return modelAndViewError4;
+    } // Länkar till problem 6 om svaret är rätt. Annars tillbaka till problem4.
+
+    @RequestMapping(method = RequestMethod.POST, path = "/problem7")
+    public ModelAndView problem7(@RequestParam String solution5) {
+        if (solution5.trim().equals("adaptation")) {
+            ModelAndView modelAndView = new ModelAndView("problem7");
+            return modelAndView;
+        }
+        ModelAndView modelAndViewError4 = new ModelAndView("problem6");
+        modelAndViewError4.addObject("Message6", "Wrong answer!");
+        return modelAndViewError4;
+    } // Länkar till problem 6 om svaret är rätt. Annars tillbaka till problem4.
 
     @RequestMapping(method = RequestMethod.POST, path="/lastpage")
     public ModelAndView listNames () {
